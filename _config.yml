@@ -107,9 +107,9 @@ author:
   location         : # "Korea"
   email            : "2innnnn0@naver.com"
   links:
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
-      url: mailto:2innnnn0@naver.com
+    # - label: "Email"
+    #   icon: "fas fa-fw fa-envelope-square"
+    #   url: mailto:2innnnn0@naver.com
     # - label: "Website"
       # icon: "fas fa-fw fa-link"
       # url: "https://your-website.com"
