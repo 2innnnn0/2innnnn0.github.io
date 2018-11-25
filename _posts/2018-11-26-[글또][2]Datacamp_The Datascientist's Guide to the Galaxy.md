@@ -1,4 +1,4 @@
-<!-- _posts/2018-11-26-[글또][2]Datacamp_은하수를 여행하는 데이터사이언티스트를 위한 안내서.md -->
+<!-- _posts/2018-11-26-[글또][2]Datacamp_The Datascientist's Guide to the Galaxy.md -->
 
 ![tyle_글또](https://dl.dropbox.com/s/ks5nuq6pwll7pel/tyle-SLO-8-1543035462.png)
 
