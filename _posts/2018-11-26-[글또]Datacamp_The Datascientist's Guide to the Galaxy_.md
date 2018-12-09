@@ -20,5 +20,5 @@ Python & R 을 주로 교육과정이 이루어져 있고, 제목처럼 입문�
 |주차 | 코스 제목(링크))  | 업로드일  | 비고  |
 |---|---|---|---|---|
 | 1  | [Supervised Learning with scikit-learn](https://colab.research.google.com/drive/1E4AzpL29LxkneuzQVMDtv6w22mERDE1A)  |  2018-11-25  | - |
-|   |   |   |   |
+| 2  | [EXTREME GRADIENT BOOSTING WITH XGBOOST](https://colab.research.google.com/drive/18mIF7gjvLxEFV4i466LLSbRLA6PQ-m2x#scrollTo=RWLLZvxIU6vd&uniqifier=1)  | 2018-12-10  |   |
 |   |   |   |   |
