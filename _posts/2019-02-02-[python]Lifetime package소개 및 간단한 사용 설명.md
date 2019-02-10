@@ -329,7 +329,7 @@ print(data.head())
 - 'ModifiedBetaGeoFitter'
 - 'BetaGeoBetaBinomFitter'
 
-쉽지 않을 것 같지만 다음엔 실서비스에도 적용한 결과를 보려합니다.
 
+실습 Jupyter 파일 : [(링크)](https://www.dropbox.com/s/tdle1i790cghig1/%5Blifetime%5DQuickstart.ipynb?dl=0)
 
 참고 : [Lifetime:Python에서 고객 평생 가치 측정](https://dataorigami.net/blogs/napkin-folding/18868411-lifetimes-measuring-customer-lifetime-value-in-python)
