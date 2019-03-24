@@ -1,10 +1,10 @@
 
 
-비식별 예약데이터를 활용하여서, 고객 일부의 데이터를 분석해보았습니다.
+비식별 예약데이터를 활용하여서, 저희 회사의 고객 일부의 데이터를 분석해보았습니다.
 데이터는 미리 준비된 자료를 가져옵니다.
 
 ### CLV모델 정의
--frequency(빈도)는 고객이 반복 구매 한 횟수를 나타냅니다. 즉, 총 구매 횟수보다 1 적은 값 입니다.
+- frequency(빈도)는 고객이 반복 구매 한 횟수를 나타냅니다. 즉, 총 구매 횟수보다 1 적은 값 입니다.
 - T(생존나이)는 선택된 시간 단위의 고객의 생존일수를 나타냅니다. 이것은 고객의 첫 구매와 연구 기간의 끝 사이의 기간과 동일합니다.
 - recency(최근 구매 일)은 가장 최근에 구매 한 고객의 T를 나타냅니다. 이는 고객의 첫 구매와 최신 구매 간의 기간과 동일합니다. (따라서 1회만 구매 한 경우 recency 값이 0 입니다)
 
@@ -44,7 +44,9 @@ data.head()
 ![cap2](https://www.dropbox.com/s/x2o7nzzu7t6you9/Screenshot%20at%20Mar%2025%2000-45-38.png?dl=1)
 
 고객당 frequency, recency, T, monetary_value(고객가치)를 확인 할 수 있습니다.
-1350667고객은 1번만 구매 했으므로(반복 없음), frequency(빈도) 및 recency(최신성)은 0 이며 그의 총 생존나이는 731일 입니다. (첫 구매와 분석 기간의 종료 사이의 기간)
+1350667고객은 1번만 구매 했으므로(반복 없음), frequency(빈도) 및 recency(최신성)은 0 이며 총생존나이는 731일 입니다.(첫 구매와 분석 기간의 종료 사이의 기간)
+
+1350666고객은 46번 구매했으며, 총440일 기간중 가장 최근에 구매한 날이 432일째 였습니다. 또, 고객가치는 1일 구매당 33500원 가량입니다.
 
 
 ```
@@ -93,7 +95,7 @@ plot_probability_alive_matrix(bgf)
 ```
 ![cap5](https://www.dropbox.com/s/fjosjaijctiht8k/Screenshot%20at%20Mar%2025%2000-46-08.png?dl=1)
 
-최근에 구입한 고객은 거의 확실하게 알 수 있습니다. 최근에 구입하지는 않았지만 많이 구매 한 고객은 이탈했을 가능성이 큽니다.
+최근에 구입한 고객은 거의 확실하게 알 수 있습니다. 최근에 구입하지는 않았지만 많이 구매 한 고객은 이탈했을 가능성이 큽니다.(40,1000)에 있는 고객은 생존확률이 낮아보입니다, (10,1000)는 생존 가능성이 높아 보입니다.
 
 
 모델의 `conditional_expected_number_of_purchases_up_to_time` 함수를 사용하면, 모델에서 "기간동안 가장 높은 예상 구매액"을 예측 할 수 있습니다.
@@ -105,7 +107,7 @@ data.sort_values(by='predicted_purchases').tail(5)
 
 ![cap6](https://www.dropbox.com/s/taqiny8l5jjkia1/Screenshot%20at%20Mar%2025%2000-46-30.png?dl=1)
 
-위 고객들은 다음날 (t=1)구매를 기대하는 상위 5명을 보여줍니다. predicted_purchases 열은 에상 구매 확률을 보여줍니다.
+위 고객들은 다음날(t=1)구매를 기대하는 상위 5명을 보여줍니다. predicted_purchases 열은 에상 구매 홧수를 보여줍니다.
 
 
 ### 모델 적합성 평가
@@ -163,7 +165,9 @@ bgf.predict(t, individual['frequency'], individual['recency'], individual['T'])
 
 ### 고객 확률 기록
 
-고객 거래 내역을 감안할 때, 우리는 훈련 된 모델에 따라 생존 가능성에 대한 역사적 확률을 계산할 수 있습니다. 예를 들어, 우리는 최고의 고객의 거래 내역을보고 살아있을 확률을보고 싶습니다.
+고객 거래 내역을 감안할 때, 훈련된 모델에 따라 생존 가능성에 대한 확률을 계산할 수 있습니다.
+
+아래 표를 보면 135066고객은 확실히 생존해 있습니다.
 
 ```
 from lifetimes.plotting import plot_history_alive
@@ -177,7 +181,7 @@ plot_history_alive(bgf, days_since_birth, sp_trans, 'InvoiceDate')
 
 ![cap](https://www.dropbox.com/s/ma37ivtiraldpff/Screenshot%20at%20Mar%2025%2000-47-48.png?dl=1)
 
-135066고객은 확실히 생존해 있습니다.
+
 
 ```
 fig = plt.figure(figsize=(12,8))
@@ -187,7 +191,7 @@ sp_trans = df.loc[df['CustomerID'] == id]
 plot_history_alive(bgf, days_since_birth, sp_trans, 'InvoiceDate')
 ```
 
-1350947고객은 2016-08 기준으로 더이상 재구매가 일어나지 않았습니다. 즉, 더이상 생존하지 않습니다.
+1350947 고객은 2016-08 기준으로 더이상 재구매가 일어나지 않았습니다. 즉, 더이상 생존하지 않습니다.
 
 ![cap](https://www.dropbox.com/s/48z358id4ube0xw/Screenshot%20at%20Mar%2025%2000-48-10.png?dl=1)
 
@@ -204,11 +208,11 @@ plot_history_alive(bgf, days_since_birth, sp_trans, 'InvoiceDate')
 ![caps](https://www.dropbox.com/s/ak81fm4gz80hoea/Screenshot%20at%20Mar%2025%2000-48-18.png?dl=1)
 
 
-### 금전적 가치의 감마 - 감마 모델을 사용하여 고객의 평생 가치 산정
+### 금전적 가치의 감마-감마 모델을 사용하여 고객의 평생 가치 산정
 
 이제 각 거래의 경제적 가치를 고려할 수 있습니다. 예측하기 위해 감마-감마 모델을 사용 하여 향후 고객 수준에서 지출 가능성을 예측합니다.
 
-적어도 우리와 함께 반복 구입 한 고객만을 추정하고 있습니다. 따라서 275명의 ​​고객을 예상하고 있습니다.
+모델의 한계는 적어도 1회 이상 반복 구입한 고객만을 추정할 수 있고, 이 자료에선 419명 중 275명의 ​​고객만을 알 수 있습니다.
 
 ```
 returning_customers_summary = data[data['frequency']>0]
@@ -221,6 +225,8 @@ returning_customers_summary.head()
 
 
 감마-감마 모델을 적용한 후에는 각 고객의 평균 거래 가격을 산정 할 수 있습니다.
+1350666 고객은 구매당 33000원 가량을 기대할 수 있습니다.
+
 ```
 from lifetimes import GammaGammaFitter
 ggf = GammaGammaFitter(penalizer_coef = 0)
