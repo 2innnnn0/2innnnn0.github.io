@@ -1,5 +1,4 @@
 ---
-layout: post
 title:  "글또 2기 회고 글"
 subtitle: "geultto2_reminiscence"
 search: false
@@ -8,7 +7,9 @@ categories:
 tags: 글또
 comments: true
 ---
+
 - 글또 2기에 대한 회고 글입니다
+
 ---
 
 작년 11월부터 진행했던 글쓰기가 4월을 끝으로 마무리되었다.
