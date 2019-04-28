@@ -1,4 +1,5 @@
 ---
+layout: post
 title:  "글또 2기 회고 글"
 subtitle: "geultto2_reminiscence"
 search: false
