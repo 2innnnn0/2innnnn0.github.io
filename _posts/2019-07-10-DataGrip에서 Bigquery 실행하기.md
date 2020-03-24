@@ -4,12 +4,11 @@ subtitle: "Bigquery in DataGrip IDE"
 search: true
 categories:
   - SQL
-tags: bigquery ,bigquery IDE, IDE, datagrip, IntelliJ
+tags: bigquery , IDE, datagrip, IntelliJ
 comments: true
 ---
 
 ![MAIN](https://www.dropbox.com/s/whlwhgjzxp12fyj/datagrip%280%20main%29?dl=1)
-
 
 Mysql, Oracle 등 다양한 DBMS를 쓰면서, MysqlWorkBench나 SQLdeveloper 같은 IDE 적극적으로 활용하였다. 장인은 도구를 탓하지 않는다고 하지만, 좋은 툴이 업무 효율에 영향을 많이 주는 것은 부정할 수 없다. 빠르고 쉽게 데이터를 추출하는 니즈는 데이터를 다루는 사람이라면 누구나 공감을 할 것이다.
 
@@ -17,7 +16,7 @@ Bigquery는 아직 공식적으로 지원하는 IDE가 없어서 아쉬웠는데
 IntelliJ에서 Database IDE인 Datagrip으로 빅쿼리를 실행가능한 방법을 찾았고, 적용하는 과정을 공유해보려한다. 필자의 경우 현재도 업무에서 유용하게 사용하고 있는 중이다.
 
 빅쿼리를 많이 쓰는 사람들에게 큰 도움이 되었으면 한다.
-참고로 Datagrip은 *유료상품* 이다. 무료로 30일 사용가능하고, 가끔씩 하는 할인을 통해 구독을 하면 유용하게 사용이 가능하다. 단, 학생인 경우 무료로 사용가능하다!
+참고로 Datagrip은 **유료상품** 이다. 무료로 30일 사용가능하고, 가끔씩 하는 할인을 통해 구독을 하면 유용하게 사용이 가능하다. 단, 학생인 경우 무료로 사용가능하다.
 
 
 우선 DataGrip의 장점은
@@ -65,7 +64,11 @@ IntelliJ에서 Database IDE인 Datagrip으로 빅쿼리를 실행가능한 방�
 
 다른 것 작성 필요없이, URL란에 아래 예시 처럼 입력하면 끝.
 
+
+
+```
 jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;ProjectId=PROJECTID;OAuthType=0;OAuthServiceAcctEmail==EMAIL;OAuthPvtKeyPath=KEYFILE;Timeout=10000
+```
 
 OAuthPvtKeyPath 란에는 console.cloud.google.com 에서 JSON으로 된Key를 다운받아
 
@@ -90,7 +93,7 @@ OAuthPvtKeyPath 란에는 console.cloud.google.com 에서 JSON으로 된Key를 �
 
 ![config3](https://www.dropbox.com/s/3xbs8bdra3bmprc/datagrip%284%29?dl=1)
 
-잘 나옴!! 
+잘나온다!
 
 ----
 

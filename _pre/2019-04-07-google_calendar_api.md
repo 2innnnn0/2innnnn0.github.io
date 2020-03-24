@@ -1,4 +1,12 @@
-
+---
+title:  "구글캘린더API로 야구경기 일정 가져오기"
+subtitle: "Google_Calendar_API"
+search: false
+categories:
+  - geultto
+tags: 글또
+comments: true
+---
 
 본 글은 구글 캘린더API를 연동하는 방법에 대해서 설명하고, 추가로 해당 캘린더의 장소를 함께 데이터로 추출하는 과정을 진행한다.
 

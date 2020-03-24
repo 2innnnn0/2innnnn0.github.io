@@ -1,3 +1,12 @@
+---
+title:  "CLV를 예측하는 Lifetime 실사용기(1) 소개편"
+subtitle: "Python Lifetime"
+search: false
+categories:
+  - geultto
+tags: 글또
+comments: true
+---
 
 ![tyle](https://www.dropbox.com/s/5hsvwm67n5wppck/tyle-SLO-3-1549722095.png?dl=1)
 

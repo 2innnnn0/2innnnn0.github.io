@@ -1,6 +1,16 @@
-
+---
+title:  "CLV를 예측하는 Lifetime 실사용기(2) 활용편"
+subtitle: "Python Lifetime"
+search: false
+categories:
+  - geultto
+tags: 글또
+comments: true
+---
 
 비식별 예약데이터를 활용하여서, 저희 회사의 고객 일부의 데이터를 분석해보았습니다.
+
+---
 데이터는 미리 준비된 자료를 가져옵니다.
 
 ### CLV모델 정의
